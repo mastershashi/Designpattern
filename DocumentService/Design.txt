@@ -1,0 +1,49 @@
+Here's my approach to designing a simple document service in Java:
+
+Back-of-the-Envelope Estimation
+
+Assuming we have:
+
+- 1000 users
+- 1000 documents
+- 10% of documents are shared with other users
+- Average document size: 1 KB
+- Average number of access grants per document: 5
+
+We can estimate the memory requirements for the document service:
+
+- Total memory required: 1000 documents * 1 KB per document = 1 MB
+- Additional memory for access grants: 1000 documents * 5 access grants per document * 10 bytes per access grant = 50 KB
+
+Proposed Entities
+
+- User: Represents a user with attributes like username, documents, etc.
+- Document: Represents a document with attributes like name, content, owner, accessGrants, etc.
+- AccessGrant: Represents an access grant with attributes like user, permission, etc.
+
+Design Patterns
+
+- Factory Pattern: Can be used to create instances of User and Document classes.
+- Observer Pattern: Can be used to notify listeners when a document is created, updated, or deleted.
+- Strategy Pattern: Can be used to implement different access control strategies.
+
+Algorithms
+
+- Hashing: Can be used to efficiently store and retrieve documents.
+- ACL (Access Control List): Can be used to implement access control for documents.
+
+Sizing of DB
+
+- Memory: Estimated memory requirement is 1 MB.
+
+Which All DB We Should Use
+
+- In-Memory Database: Since the problem statement requires a simple document service, we can use a Java-based in-memory database like Hazelcast or Apache Ignite.
+- Relational Database: We can also use a relational database like MySQL or PostgreSQL to store documents and access grants.
+
+Now, let me verbally state the process of creating, reading, updating, and deleting documents:
+
+1. Create Document: When a user creates a document, we create a new Document object and add it to the documents list of the corresponding User object. We also set the owner attribute of the Document object to the current user.
+2. Read Document: When a user reads a document, we retrieve the corresponding Document object from the documents list of the corresponding User object. We then check if the user has read permission for the document. If they do, we return the document content.
+3. Update Document: When a user updates a document, we retrieve the corresponding Document object from the documents list of the corresponding User object. We then check if the user has edit permission for the document. If they do, we update the document content.
+4. Delete Document: When a user deletes a document, we retrieve the corresponding Document object from the documents list of the corresponding User object. We then check if the user is the owner of the document. If they are, we delete the document.
