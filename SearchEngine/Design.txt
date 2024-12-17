@@ -1,0 +1,34 @@
+the design and implementation process for an in-memory search engine.
+
+Back-of-the-Envelope Estimation:
+
+Assuming we have a collection of 1 million text documents, with an average document size of 1 KB. We want to support searches based on keywords and return the top 10 results ordered by various criteria.
+
+- Estimated memory requirement: 1 TB (1 million documents * 1 KB/document)
+- Estimated search latency: 100-500 ms (depending on the complexity of the search query and the ordering criteria)
+
+Proposed Entities:
+
+1. Document: Represents a text document with attributes like id, text, size, and keywords.
+2. Index: Represents the search index with attributes like keywordToDocumentIds (a map of keywords to document IDs) and documentIdToDocument (a map of document IDs to documents).
+3. SearchQuery: Represents a search query with attributes like keywords, orderingCriteria, and limit.
+4. SearchResult: Represents a search result with attributes like documentId, score, and rank.
+
+Design Patterns:
+
+1. Inverted Index: We'll use an inverted index to store the keyword-to-document IDs mapping. This will allow us to efficiently retrieve documents containing specific keywords.
+2. Observer Pattern: We can use the observer pattern to notify the search index when documents are added, updated, or removed.
+3. Strategy Pattern: We can use the strategy pattern to implement different ordering criteria (e.g., document size, keyword frequency).
+
+Algorithms:
+
+1. Tokenization: We'll use a tokenization algorithm (e.g., whitespace tokenization) to split the text into individual words or keywords.
+2. Stopword removal: We'll use a stopword removal algorithm to remove common words like "the", "and", etc. that don't add much value to the search results.
+3. TF-IDF: We can use the TF-IDF algorithm to calculate the score of each document based on the frequency of the keywords and their importance in the document.
+
+Data Structures:
+
+1. HashMap: We'll use a HashMap to store the keyword-to-document IDs mapping in the search index.
+2. ArrayList: We'll use an ArrayList to store the search results.
+
+Now that we have a high-level design, we can start discussing the implementation details. What would you like to know next?

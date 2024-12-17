@@ -1,0 +1,47 @@
+Here's my approach to designing an in-memory cache in Java:
+
+Back-of-the-Envelope Estimation
+
+Assuming we have:
+
+- 1000 cache entries
+- 1000 get operations per second
+- 100 put operations per second
+- 10% cache hit ratio
+- 90% cache miss ratio
+- Average cache entry size: 1 KB
+
+We can estimate the memory requirements for the cache:
+
+- Total memory required: 1000 cache entries * 1 KB per entry = 1 MB
+
+Proposed Entities
+
+- Cache: Represents the in-memory cache with attributes like capacity, evictionPolicy, etc.
+- CacheEntry: Represents a single cache entry with attributes like key, value, timestamp, etc.
+- EvictionPolicy: Represents the eviction policy for the cache with attributes like type, configuration, etc.
+
+Design Patterns
+
+- Factory Pattern: Can be used to create instances of Cache and EvictionPolicy classes.
+- Observer Pattern: Can be used to notify listeners when a cache entry is added, updated, or removed.
+- Strategy Pattern: Can be used to implement different eviction policies.
+
+Algorithms
+
+- Least Recently Used (LRU): Can be used as an eviction policy to remove the least recently used cache entries.
+- First-In-First-Out (FIFO): Can be used as an eviction policy to remove the oldest cache entries.
+
+Sizing of DB
+
+- Memory: Estimated memory requirement is 1 MB.
+
+Which All DB We Should Use
+
+- In-Memory Database: Since the problem statement requires an in-memory cache, we can use a Java-based in-memory database like Hazelcast or Apache Ignite.
+
+Now, let me verbally state the process of get, put, and eviction:
+
+1. Get: When a get request is made, the cache checks if the requested key is present in the cache. If it is, the cache returns the corresponding value. If not, the cache returns a null value.
+2. Put: When a put request is made, the cache checks if the key is already present in the cache. If it is, the cache updates the corresponding value. If not, the cache adds a new entry to the cache.
+3. Eviction: When the cache reaches its capacity, the eviction policy is triggered. The eviction policy removes the least recently used cache entries (in case of LRU) or the oldest cache entries (in case of FIFO) to make room for new entries.

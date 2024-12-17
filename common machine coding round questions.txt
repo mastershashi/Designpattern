@@ -1,0 +1,59 @@
+Sure! Below are 20 machine coding questions inspired by real-world problems, as seen in platforms like Leetcode, HackerRank, TopCoder, and CodeSignal. These questions are designed to be similar to those asked in high-level software engineering interviews, specifically targeting roles such as Senior/Lead Software Engineer at Razorpay, focusing on backend architecture, system design, and coding.
+
+1. Design a Payment Processing System
+Implement a backend API for processing payments. The system should handle various payment methods (e.g., credit/debit card, wallet, UPI). It should track the transaction status (pending, failed, completed) and support retries on failure.
+2. Design a URL Shortener
+Implement a URL shortening service that can shorten long URLs and store them. The system should allow users to retrieve the original URL from the shortened URL and handle potential collisions.
+3. Implement a Least Recently Used (LRU) Cache
+Implement an LRU Cache. The cache should support the following operations: get(key) and put(key, value). If the cache reaches its capacity, it should evict the least recently used item.
+4. Design a Real-Time Chat System
+Implement a backend for a real-time messaging service where users can send and receive messages. The system should support features like message history, typing indicators, and push notifications for new messages.
+5. Design a Shopping Cart System
+Build the backend for a shopping cart. The system should allow users to add/remove items from the cart, calculate total price (with tax, shipping, etc.), and handle discounts, coupons, and promotions.
+6. Implement a Financial Transaction System with Fraud Detection
+Implement an API that processes financial transactions and performs fraud detection. Transactions need to be stored, and suspicious ones must be flagged for review. Define the detection rules based on thresholds, patterns, or user behavior.
+7. Design an E-commerce Order System
+Create an order management system where orders can be placed, updated, and tracked. The system should manage order statuses like pending, shipped, delivered, cancelled and allow users to track their order status in real-time.
+8. Build an API for Payment Gateway Integration
+Implement an API that integrates with third-party payment gateways (like Razorpay, Stripe, or PayPal). The system should handle payment initiation, success/failure notifications, and status updates for transactions.
+9. Design a Multi-Tenant Billing System
+Build a multi-tenant billing system that supports multiple users with distinct billing information, invoice generation, and payment tracking. Each tenant should have its own subscription plans, billing cycles, and payment methods.
+10. Design a Distributed Rate Limiter
+Implement a distributed rate limiter that allows you to limit the number of API requests a user can make within a certain time period. Use techniques like token bucket or leaky bucket to ensure fairness and scalability.
+11. Build a Content Management System (CMS) API
+Design a backend API for managing articles, blogs, or other types of content. The system should support CRUD operations, content categorization, and user access control.
+12. Design a System for Financial Reconciliation
+Implement a reconciliation system to compare records from two different sources (e.g., your system and a third-party provider). The system should detect discrepancies, log them, and allow for easy dispute resolution.
+13. Design a Backend for a Subscription-based Service
+Implement a subscription-based service (e.g., monthly or yearly) where users can subscribe to different plans. The system should handle renewals, cancellations, and notifications for upcoming renewals.
+14. Implement a Job Queue System
+Design and implement a system that processes jobs in a queue. The jobs can be processed concurrently with retries on failure. Each job should be tracked with a status (pending, in-progress, completed, failed).
+15. Design a Distributed Logging System
+Create a logging system that aggregates logs from multiple services across a distributed system. The system should be able to query logs by time range, log level, and keywords. Ensure scalability and performance under high load.
+16. Build an API for Wallet Management
+Design a backend API for managing a digital wallet system. Users can deposit, withdraw, and transfer funds between wallets. Implement transaction history and ensure atomic operations for wallet balances.
+17. Design a Coupon/Discount Management System
+Implement a coupon/discount management system where merchants can create, modify, and apply promotional codes. The system should support percentage-based or fixed discounts, expiry dates, and usage limits.
+18. Design a System for Real-Time Analytics
+Implement a backend system for processing real-time analytics. The system should process incoming data streams (e.g., transactions, user actions) and aggregate metrics such as total sales, average transaction value, and active users.
+19. Implement a Payment Refund System
+Design a system to process refunds for completed transactions. The system should handle partial and full refunds, ensure consistency between the payment processor and the user's account, and track refund statuses.
+20. Design an API for Event Logging and Notification
+Build a system where different services can log events (e.g., payment success, user login, etc.) and trigger notifications (email, SMS, push notifications) based on these events. The system should be scalable and handle a high volume of events.
+Key Concepts to Focus On:
+Scalability: All these questions focus on building systems that need to scale efficiently. Think about how you would design the data model, API endpoints, and ensure performance at scale.
+
+Concurrency and State Management: Many questions will require you to handle concurrent access, transactions, and state changes (e.g., race conditions in payment processing, job queues).
+
+Error Handling and Fault Tolerance: Given that many of these systems deal with financial transactions, robustness and fault tolerance are key. Think about retry mechanisms, logging, and monitoring.
+
+Security: Security is critical, especially for payment-related systems. Consider encryption, secure API design, and user authentication.
+
+Distributed Systems and Data Consistency: Some questions will require you to deal with distributed systems and ensure data consistency (e.g., across multiple services or databases).
+
+Example Frameworks and Tools:
+Cache: Redis (for LRU Cache, rate limiting)
+Database: SQL (PostgreSQL, MySQL) and NoSQL (MongoDB, DynamoDB)
+Message Queues: Kafka, RabbitMQ (for job queues, event-driven systems)
+Authentication: OAuth 2.0, JWT (for payment APIs)
+Security: HTTPS, encryption (for secure transactions)

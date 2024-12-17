@@ -1,0 +1,46 @@
+Back-of-the-Envelope Estimation
+
+Assuming we have:
+
+- 1000 tables in the database
+- 100 columns per table
+- 1000 rows per table
+- 50% of columns are of type string
+- 50% of columns are of type int
+- 20% of columns have constraints (max length for string, min value for int)
+- 10% of columns are mandatory
+
+We can estimate the memory requirements for the database:
+
+- Table metadata: 1000 tables * 100 columns per table * 10 bytes per column (avg) = 1 MB
+- Column metadata: 1000 tables * 100 columns per table * 10 bytes per column (avg) = 1 MB
+- Row data: 1000 tables * 1000 rows per table * 10 bytes per row (avg) = 10 GB
+
+Total estimated memory requirement: 10 GB + 2 MB = 10.002 GB
+
+Proposed Entities
+
+- Table: Represents a table in the database with attributes like id, name, columns, etc.
+- Column: Represents a column in a table with attributes like id, name, type, constraint, etc.
+- Row: Represents a row in a table with attributes like id, values, etc.
+- Constraint: Represents a constraint on a column with attributes like type, value, etc.
+
+Design Patterns
+
+- Factory Pattern: Can be used to create instances of Table, Column, Row, and Constraint classes.
+- Observer Pattern: Can be used to notify listeners when a table, column, or row is added, updated, or deleted.
+- Command Pattern: Can be used to encapsulate database operations like create, update, delete, and query.
+
+Algorithms
+
+- Hashing: Can be used to efficiently store and retrieve rows in a table.
+- Sorting: Can be used to efficiently filter and display rows in a table.
+
+Sizing of DB
+
+- Memory: Estimated memory requirement is 10.002 GB.
+- Storage: Since it's an in-memory database, storage is not a concern.
+
+Which All DB We Should Use
+
+- In-Memory Database: Since the problem statement requires an in-memory database, we can use a Java-based in-memory database like H2 or Apache Derby.

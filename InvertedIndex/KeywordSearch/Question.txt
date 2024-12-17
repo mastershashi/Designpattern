@@ -1,0 +1,4 @@
+Design a system that builds an inverted index from a collection of documents.
+Each document is represented by a unique ID, and the goal is to map each unique word to a set of document IDs in which that word appears.
+Implement a keyword matching function that, given a list of keywords, returns the set of document IDs where each keyword is found. 
+The system should efficiently handle large-scale document collections and support parallel processing to improve performance.
