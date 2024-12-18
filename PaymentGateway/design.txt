@@ -1,0 +1,36 @@
+Here's a back-of-the-envelope estimation and proposal for the payment gateway system:
+
+Entities Required:
+
+1. Client: Represents a client (e.g., Flipkart) with attributes like id, name, etc.
+2. PaymentGateway: Represents the payment gateway with attributes like id, name, etc.
+3. Bank: Represents a bank with attributes like id, name, etc.
+4. PaymentMethod: Represents a payment method (e.g., credit card, net banking, UPI) with attributes like id, name, etc.
+5. Transaction: Represents a transaction with attributes like id, amount, paymentMethod, etc.
+
+Design Patterns:
+
+1. Factory Pattern: Can be used to create instances of Client, PaymentGateway, Bank, and PaymentMethod classes.
+2. Strategy Pattern: Can be used to implement different payment methods and bank integrations.
+3. Observer Pattern: Can be used to notify clients and banks about transaction updates.
+4. Composite Pattern: Can be used to represent a payment gateway as a composite of multiple banks and payment methods.
+
+Algorithms:
+
+1. Router Algorithm: Can be used to route transactions to different banks based on certain criteria (e.g., payment method, client).
+2. Load Balancing Algorithm: Can be used to distribute transactions across multiple banks to ensure efficient processing.
+
+Sizing of DB:
+
+Assuming an average of 100 clients, 10 payment gateways, 50 banks, and 1000 transactions per second, we can estimate the storage requirements as follows:
+
+- Client storage: 100 clients * 1 KB/client = 100 KB
+- Payment gateway storage: 10 payment gateways * 1 KB/payment gateway = 10 KB
+- Bank storage: 50 banks * 1 KB/bank = 50 KB
+- Transaction storage: 1000 transactions/second * 1 KB/transaction = 1 MB/second
+
+Database Options:
+
+1. Relational Database: MySQL, PostgreSQL, or Oracle can be used for storing clients, payment gateways, banks, and transactions.
+2. NoSQL Database: MongoDB, Cassandra, or Couchbase can be used for storing clients, payment gateways, banks, and transactions.
+3. Graph Database: Neo4j or Amazon Neptune can be used for storing relationships between clients, payment gateways, banks, and transactions.
